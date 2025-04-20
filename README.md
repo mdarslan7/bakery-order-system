@@ -1,4 +1,4 @@
-# Bakery Order System
+# Bakery Ordering System
 
 ## System Architecture Overview
 
