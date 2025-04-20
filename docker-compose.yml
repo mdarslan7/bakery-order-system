@@ -53,8 +53,8 @@ services:
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
     ports:
-      - "5672:5672"   # For communication with services
-      - "15672:15672" # For RabbitMQ Web UI
+      - "5672:5672"  
+      - "15672:15672" 
     networks:
       - bakery-network
 
