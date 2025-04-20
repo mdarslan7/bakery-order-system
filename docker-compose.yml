@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    container_name: bakery-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_USER=bakeryuser
+      - DB_PASSWORD=bakerypass
+      - DB_NAME=bakerydb
+
+  postgres:
+    image: postgres:15
+    container_name: bakery-db
+    environment:
+      POSTGRES_USER: bakeryuser
+      POSTGRES_PASSWORD: bakerypass
+      POSTGRES_DB: bakerydb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
