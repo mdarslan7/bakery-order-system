@@ -40,7 +40,7 @@ Follow these steps to set up the project on your local machine:
 
 ### Steps
 
-1. **Fork and clone the repository:**
+1. **Clone the repository:**
    ```bash
    git clone <your-repository-url>
    cd <project-directory>
